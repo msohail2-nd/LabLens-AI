@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: beta
+    description: Beta waitlist signup
 paths:
   /healthz:
     get:
@@ -24,6 +26,37 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /beta-signups:
+    post:
+      operationId: createBetaSignup
+      tags: [beta]
+      summary: Join the LabLens AI beta waitlist
+      description: Stores a researcher's beta signup.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BetaSignupInput"
+      responses:
+        "201":
+          description: Signup accepted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BetaSignupConfirmation"
+        "400":
+          description: Invalid signup details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+        "409":
+          description: Email is already on the waitlist
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +66,51 @@ components:
           type: string
       required:
         - status
+    BetaSignupInput:
+      type: object
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 120
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        researchField:
+          type: string
+          minLength: 1
+          maxLength: 120
+        graduateProgram:
+          type: string
+          minLength: 1
+          maxLength: 160
+        biggestChallenge:
+          type: string
+          minLength: 1
+          maxLength: 2000
+      required:
+        - name
+        - email
+        - researchField
+        - graduateProgram
+        - biggestChallenge
+    BetaSignupConfirmation:
+      type: object
+      properties:
+        accepted:
+          type: boolean
+        message:
+          type: string
+      required:
+        - accepted
+        - message
+    ApiError:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
 

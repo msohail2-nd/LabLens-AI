@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "LabLens AI"
+description = "A researcher-focused landing page and beta signup experience for LabLens AI, an AI-assisted lab record-continuity platform that helps graduate researchers reconnect experiment context across scattered files and notes."
+version = "1.0.0"
+id = "artifacts/lablens-ai"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19992
+
+[services.development]
+run = "pnpm --filter @workspace/lablens-ai run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/lablens-ai", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/lablens-ai/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19992"
+BASE_PATH = "/"

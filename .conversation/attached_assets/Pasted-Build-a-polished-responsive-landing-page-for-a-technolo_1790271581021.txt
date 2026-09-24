@@ -1,0 +1,259 @@
+Build a polished, responsive landing page for a technology startup called “LabLens AI.”
+
+STARTUP OVERVIEW
+LabLens AI is an AI-assisted laboratory record-continuity platform for graduate student researchers in research-intensive academic laboratories.
+
+Our target users are graduate students who run multiple experiments and already maintain complicated workarounds across physical notebooks, electronic notebooks, phone photos, tablets, instrument computers, PowerPoint, Google Drive, coded folders, and tutorials.
+
+LabLens AI should be presented as a B2C technology startup. The graduate student researcher is the primary user and potential subscriber. Do not show pricing yet because willingness to pay has not been validated. Focus on joining the beta or waitlist.
+
+CORE PROBLEM
+Graduate researchers often have to manually reconstruct the context of an experiment from scattered procedures, observations, images, spectra, instrument files, slides, and folders.
+
+CORE BENEFIT
+Fast recovery of the complete context of an experiment without manually rebuilding information from scattered records.
+
+POSITIONING
+For graduate students in research-intensive academic labs who maintain multi-tool record workarounds and are dissatisfied with manually rebuilding experiment context from scattered records, LabLens AI is an AI-assisted laboratory record-continuity platform that provides fast recovery of complete experiment context.
+
+Unlike the current patchwork of notebooks, shared drives, instrument computers, electronic lab notebooks, and presentation files, LabLens AI organizes every experiment around one connected record linking procedures, observations, images, analysis, and instrument files.
+
+PRIMARY HEADLINE
+Stop rebuilding experiments from scattered records.
+
+PRIMARY SUBHEADLINE
+LabLens AI connects procedures, observations, images, and instrument files around each experiment, helping graduate researchers recover context quickly, continue their work, and prepare advisor updates without starting over.
+
+PRIMARY CTA
+Join the Beta
+
+SECONDARY CTA
+See How It Works
+
+NAVIGATION
+Create a clean sticky navigation bar with:
+- LabLens AI logo
+- Problem
+- How It Works
+- Product
+- Why LabLens
+- About
+- Join the Beta button
+
+PAGE SECTIONS
+
+1. HERO SECTION
+Include:
+- Headline
+- Subheadline
+- Primary and secondary CTA buttons
+- A modern product dashboard mockup
+
+The dashboard mockup should show:
+- Experiment title and experiment code
+- Procedure
+- Equations or formulas
+- Observations
+- Uploaded spectra or instrument files
+- Results and figures
+- AI-generated experiment summary
+- Sources used for the summary
+- Suggested next steps labeled as “Researcher Review Required”
+- Advisor update preview
+
+Do not use generic AI-brain imagery. Make the interface feel like scientific research software.
+
+2. THE PROBLEM
+Section title:
+“Your experiment is in one place. Its context is in five.”
+
+Explain that graduate researchers commonly split information across:
+- Physical lab notebooks
+- Electronic lab notebooks
+- Phone photographs
+- Instrument computers
+- Shared drives
+- PowerPoint presentations
+- Data-analysis software
+- Temporary paper notes
+- Cleanroom tablets
+
+Show three anonymized research-workflow examples:
+
+Example 1:
+A researcher keeps procedures in a physical notebook, reference photos on a phone, results on a lab computer, and cleanroom notes on a tablet.
+
+Example 2:
+A researcher used LabArchives, Google Docs, Word, and PowerPoint, then returned to physical notebooks after digital access became read-only.
+
+Example 3:
+A researcher created project-specific electronic notebooks, coded data folders, a shared Drive, temporary paper and photo capture, and written tutorials.
+
+Do not display the names Naomi, Kasuni, or Kareem publicly. Present these as anonymized discovery insights.
+
+3. HOW LABLENS WORKS
+Create four steps:
+
+Capture
+Upload or link procedures, notes, observations, images, spectra, spreadsheets, slides, and instrument files.
+
+Connect
+Organize everything around a single experiment record using project names, experiment codes, compounds, dates, and file relationships.
+
+Recover
+Search by experiment, compound, procedure, keyword, instrument, date, or result and quickly recover the full context.
+
+Continue
+Generate a source-linked experiment summary or advisor update so the researcher can continue work without manually rebuilding the record.
+
+4. PRODUCT FEATURES
+Use modern cards for:
+
+Connected Experiment Records
+Keep procedures, observations, images, results, and files linked to the experiment that produced them.
+
+AI-Assisted Context Recovery
+Summarize experiment history while showing the source records used.
+
+Scientific Search
+Search by compound, experiment code, procedure, instrument, keyword, or date.
+
+Advisor Update Builder
+Turn selected experiments into a structured research update.
+
+File and Image Linking
+Connect spectra, instrument exports, graphs, photos, slides, and analysis files.
+
+Researcher-Controlled AI
+Clearly state that AI output supports—not replaces—scientific judgment.
+
+5. BEFORE AND AFTER
+Create a side-by-side comparison.
+
+Before LabLens AI:
+- Search notebooks manually
+- Check phone photos
+- Open instrument computers
+- Search shared folders
+- Rebuild slides
+- Ask labmates for missing context
+- Repeat information across systems
+
+With LabLens AI:
+- Open one connected experiment record
+- View procedures and observations together
+- Access linked files and images
+- Review a source-backed summary
+- Continue work or prepare an update
+
+6. TRUST AND RESEARCH INTEGRITY
+Section title:
+“Your research stays under your control.”
+
+Include:
+- Researcher approval before using AI-generated summaries or suggestions
+- Source links for generated content
+- Clear separation between recorded facts and AI interpretation
+- Private project workspaces
+- Exportable research records
+- No claim that AI replaces scientific expertise
+
+Use careful language because chemistry contains exceptions and researchers may be concerned about confidentiality, intellectual property, data security, and AI reliability.
+
+Do not make unsupported claims such as guaranteed accuracy, regulatory compliance, or institutional security certification.
+
+7. WHO IT IS FOR
+Headline:
+“Built for graduate researchers managing real laboratory complexity.”
+
+Include:
+- Chemistry graduate students
+- Materials-science researchers
+- Instrument-intensive laboratories
+- Cleanroom researchers
+- Researchers managing multiple projects
+- Students preparing frequent advisor or group updates
+
+8. FOUNDER SECTION
+Title:
+“Built from researcher discovery, not assumptions.”
+
+Include:
+- Muhammad Sohail
+- Ategeka Musinguzi
+- Position them as the founding team behind LabLens AI
+- Explain that the concept was shaped through direct conversations with graduate researchers who had already built Level-4 recordkeeping workarounds
+
+Do not claim traction, revenue, patents, customers, partnerships, or institutional adoption.
+
+9. FINAL CTA
+Headline:
+“Spend less time rebuilding the past. Continue the experiment.”
+
+Supporting text:
+“Join the LabLens AI beta and help shape a better way to preserve and recover experimental context.”
+
+Button:
+Join the Beta
+
+10. FOOTER
+Include:
+- LabLens AI
+- Product
+- Privacy
+- Contact
+- Founders
+- Copyright
+- “AI-assisted research organization. Researcher review required.”
+
+DESIGN DIRECTION
+Create a premium scientific technology startup appearance.
+
+Use:
+- Deep navy or charcoal background
+- Indigo, violet, or teal accents
+- White and light-gray text
+- Subtle grid, molecule, spectrum, or data-line visuals
+- Rounded product cards
+- Soft gradients
+- Clean modern typography
+- Subtle animations and hover effects
+- Strong spacing and visual hierarchy
+
+Avoid:
+- Generic stock laboratory photographs
+- Cartoon scientists
+- Overly futuristic imagery
+- Medical imagery
+- Excessive animations
+- Dense paragraphs
+
+FUNCTIONAL REQUIREMENTS
+- Fully responsive on desktop, tablet, and mobile
+- Accessible color contrast
+- Semantic HTML
+- Keyboard-accessible navigation
+- Smooth scrolling
+- Mobile navigation menu
+- Working beta signup form
+- Form fields: name, email, research field, graduate program, biggest recordkeeping challenge
+- Email validation
+- Loading, success, and error states
+- Store beta submissions using a lightweight backend suitable for Replit
+- Do not expose credentials in frontend code
+- Add basic SEO metadata
+- Add Open Graph metadata
+- Use reusable components
+- Keep code clean and clearly organized
+
+COPY STYLE
+Use confident but evidence-based startup language. The tone should be:
+- Modern
+- Researcher-focused
+- Credible
+- Clear
+- Technically informed
+- Free of exaggerated promises
+
+The main message throughout the page should remain:
+LabLens AI gives graduate researchers one connected place to recover complete experiment context without manually reconstructing scattered records.
