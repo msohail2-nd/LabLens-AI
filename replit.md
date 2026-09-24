@@ -1,10 +1,11 @@
-# [Project name]
+# LabLens AI
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+LabLens AI is a researcher-focused landing page and beta waitlist for an AI-assisted laboratory record-continuity platform.
 
 ## Run & Operate
 
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/lablens-ai run dev` — run the landing page
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
@@ -22,15 +23,23 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- Landing page: `artifacts/lablens-ai`
+- Beta signup API: `artifacts/api-server/src/routes/beta-signups.ts`
+- API contract: `lib/api-spec/openapi.yaml`
+- Database schema: `lib/db/src/schema/beta-signups.ts`
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The public site stays focused on beta validation; it intentionally has no pricing.
+- Beta submissions are validated through generated OpenAPI types and persisted in PostgreSQL.
+- Duplicate emails receive a clear conflict response rather than creating repeated records.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Responsive single-page marketing experience with accessible anchor navigation
+- Scientific experiment-record product preview
+- Research integrity and researcher-control messaging
+- Working beta signup with validation, loading, success, duplicate, and error states
 
 ## User preferences
 

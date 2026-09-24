@@ -1,433 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
-
 @theme inline {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-card-border: hsl(var(--card-border));
-
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-  --color-popover-border: hsl(var(--popover-border));
-
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-primary-border: var(--primary-border);
-
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-secondary-border: var(--secondary-border);
-
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-muted-border: var(--muted-border);
-
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-accent-border: var(--accent-border);
-
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-destructive-border: var(--destructive-border);
-
-  --color-chart-1: hsl(var(--chart-1));
-  --color-chart-2: hsl(var(--chart-2));
-  --color-chart-3: hsl(var(--chart-3));
-  --color-chart-4: hsl(var(--chart-4));
-  --color-chart-5: hsl(var(--chart-5));
-
-  --color-sidebar: hsl(var(--sidebar));
-  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
-  --color-sidebar-border: hsl(var(--sidebar-border));
-  --color-sidebar-primary: hsl(var(--sidebar-primary));
-  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
-  --color-sidebar-primary-border: var(--sidebar-primary-border);
-  --color-sidebar-accent: hsl(var(--sidebar-accent));
-  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
-  --color-sidebar-accent-border: var(--sidebar-accent-border);
-  --color-sidebar-ring: hsl(var(--sidebar-ring));
-
-  --font-sans: var(--app-font-sans);
-  --font-serif: var(--app-font-serif);
-  --font-mono: var(--app-font-mono);
-
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: hsl(var(--background)); --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border)); --color-input: hsl(var(--input)); --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card)); --color-card-foreground: hsl(var(--card-foreground)); --color-card-border: hsl(var(--card-border));
+  --color-popover: hsl(var(--popover)); --color-popover-foreground: hsl(var(--popover-foreground)); --color-popover-border: hsl(var(--popover-border));
+  --color-primary: hsl(var(--primary)); --color-primary-foreground: hsl(var(--primary-foreground)); --color-primary-border: var(--primary-border);
+  --color-secondary: hsl(var(--secondary)); --color-secondary-foreground: hsl(var(--secondary-foreground)); --color-secondary-border: var(--secondary-border);
+  --color-muted: hsl(var(--muted)); --color-muted-foreground: hsl(var(--muted-foreground)); --color-muted-border: var(--muted-border);
+  --color-accent: hsl(var(--accent)); --color-accent-foreground: hsl(var(--accent-foreground)); --color-accent-border: var(--accent-border);
+  --color-destructive: hsl(var(--destructive)); --color-destructive-foreground: hsl(var(--destructive-foreground)); --color-destructive-border: var(--destructive-border);
+  --color-chart-1: hsl(var(--chart-1)); --color-chart-2: hsl(var(--chart-2)); --color-chart-3: hsl(var(--chart-3)); --color-chart-4: hsl(var(--chart-4)); --color-chart-5: hsl(var(--chart-5));
+  --color-sidebar: hsl(var(--sidebar)); --color-sidebar-foreground: hsl(var(--sidebar-foreground)); --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-primary: hsl(var(--sidebar-primary)); --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground)); --color-sidebar-primary-border: var(--sidebar-primary-border);
+  --color-sidebar-accent: hsl(var(--sidebar-accent)); --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground)); --color-sidebar-accent-border: var(--sidebar-accent-border); --color-sidebar-ring: hsl(var(--sidebar-ring));
+  --font-sans: var(--app-font-sans); --font-mono: var(--app-font-mono);
+  --radius-sm: calc(var(--radius) - 4px); --radius-md: calc(var(--radius) - 2px); --radius-lg: var(--radius); --radius-xl: calc(var(--radius) + 4px);
 }
-
-/* LIGHT MODE */
-:root {
-  --button-outline: rgba(0, 0, 0, 0.1);
-  --badge-outline: rgba(0, 0, 0, 0.05);
-
-  /* Automatic computation of border around primary / danger buttons */
-  --opaque-button-border-intensity: -8; /* In terms of percentages */
-
-  /* Backgrounds applied on top of other backgrounds when hovered/active */
-  --elevate-1: rgba(0, 0, 0, 0.03);
-  --elevate-2: rgba(0, 0, 0, 0.08);
-
-  --background: red; /*replace with H S L */
-
-  --foreground: red; /*replace with H S L */
-
-  --border: red; /*replace with H S L */
-
-  --card: red; /*replace with H S L */
-
-  --card-foreground: red; /*replace with H S L */
-
-  --card-border: red; /*replace with H S L */
-
-  --sidebar: red; /*replace with H S L */
-
-  --sidebar-foreground: red; /*replace with H S L */
-
-  --sidebar-border: red; /*replace with H S L */
-
-  --sidebar-primary: red; /*replace with H S L */
-
-  --sidebar-primary-foreground: red; /*replace with H S L */
-
-  --sidebar-accent: red; /*replace with H S L */
-
-  --sidebar-accent-foreground: red; /*replace with H S L */
-
-  --sidebar-ring: red; /*replace with H S L */
-
-  --popover: red; /*replace with H S L */
-
-  --popover-foreground: red; /*replace with H S L */
-
-  --popover-border: red; /*replace with H S L */
-
-  --primary: red; /*replace with H S L */
-
-  --primary-foreground: red; /*replace with H S L */
-
-  --secondary: red; /*replace with H S L */
-
-  --secondary-foreground: red; /*replace with H S L */
-
-  --muted: red; /*replace with H S L */
-
-  --muted-foreground: red; /*replace with H S L */
-
-  --accent: red; /*replace with H S L */
-
-  --accent-foreground: red; /*replace with H S L */
-
-  --destructive: red; /*replace with H S L */
-
-  --destructive-foreground: red; /*replace with H S L */
-
-  --input: red; /*replace with H S L */
-  --ring: red; /*replace with H S L */
-  --chart-1: red; /*replace with H S L */
-  --chart-2: red; /*replace with H S L */
-  --chart-3: red; /*replace with H S L */
-  --chart-4: red; /*replace with H S L */
-  --chart-5: red; /*replace with H S L */
-
-  --app-font-sans: 'Inter', sans-serif;
-  --app-font-serif: Georgia, serif;
-  --app-font-mono: Menlo, monospace;
-  --radius: 0.5rem; /* 8px */
-  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0); /*replace with H S L */
-  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0); /*replace with H S L */
-  --shadow-sm:
-    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
-    0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0);
-  --shadow:
-    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
-    0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0);
-  --shadow-md:
-    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
-    0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0);
-  --shadow-lg:
-    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
-    0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0);
-  --shadow-xl:
-    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
-    0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0);
-  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
-  --tracking-normal: 0em;
-  --spacing: 0.25rem;
-
-  /* Automatically computed borders - intensity can be controlled by the user by the --opaque-button-border-intensity setting */
-
-  /* Fallback for older browsers */
-  --sidebar-primary-border: hsl(var(--sidebar-primary));
-  --sidebar-primary-border: hsl(
-    from hsl(var(--sidebar-primary)) h s
-      calc(l + var(--opaque-button-border-intensity)) / alpha
-  );
-
-  /* Fallback for older browsers */
-  --sidebar-accent-border: hsl(var(--sidebar-accent));
-  --sidebar-accent-border: hsl(
-    from hsl(var(--sidebar-accent)) h s
-      calc(l + var(--opaque-button-border-intensity)) / alpha
-  );
-
-  /* Fallback for older browsers */
-  --primary-border: hsl(var(--primary));
-  --primary-border: hsl(
-    from hsl(var(--primary)) h s
-      calc(l + var(--opaque-button-border-intensity)) / alpha
-  );
-
-  /* Fallback for older browsers */
-  --secondary-border: hsl(var(--secondary));
-  --secondary-border: hsl(
-    from hsl(var(--secondary)) h s
-      calc(l + var(--opaque-button-border-intensity)) / alpha
-  );
-
-  /* Fallback for older browsers */
-  --muted-border: hsl(var(--muted));
-  --muted-border: hsl(
-    from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) /
-      alpha
-  );
-
-  /* Fallback for older browsers */
-  --accent-border: hsl(var(--accent));
-  --accent-border: hsl(
-    from hsl(var(--accent)) h s
-      calc(l + var(--opaque-button-border-intensity)) / alpha
-  );
-
-  /* Fallback for older browsers */
-  --destructive-border: hsl(var(--destructive));
-  --destructive-border: hsl(
-    from hsl(var(--destructive)) h s
-      calc(l + var(--opaque-button-border-intensity)) / alpha
-  );
+:root, .dark {
+  --background: 223 35% 8%; --foreground: 213 31% 94%; --border: 219 25% 24%;
+  --card: 222 31% 12%; --card-foreground: 213 31% 94%; --card-border: 219 25% 25%;
+  --popover: 222 31% 14%; --popover-foreground: 213 31% 94%; --popover-border: 219 25% 28%;
+  --primary: 173 62% 68%; --primary-foreground: 222 40% 10%; --secondary: 221 25% 19%; --secondary-foreground: 213 31% 94%;
+  --muted: 222 25% 17%; --muted-foreground: 215 13% 64%; --accent: 231 40% 25%; --accent-foreground: 213 31% 94%;
+  --destructive: 3 70% 64%; --destructive-foreground: 222 40% 10%; --input: 219 25% 32%; --ring: 173 62% 68%;
+  --chart-1: 173 62% 68%; --chart-2: 229 78% 78%; --chart-3: 44 75% 72%; --chart-4: 279 50% 72%; --chart-5: 204 62% 66%;
+  --sidebar: 222 31% 12%; --sidebar-foreground: 213 31% 94%; --sidebar-border: 219 25% 24%;
+  --sidebar-primary: 173 62% 68%; --sidebar-primary-foreground: 222 40% 10%; --sidebar-accent: 221 25% 19%; --sidebar-accent-foreground: 213 31% 94%; --sidebar-ring: 173 62% 68%;
+  --button-outline: rgba(200,225,232,.15); --badge-outline: rgba(200,225,232,.1); --elevate-1: rgba(255,255,255,.035); --elevate-2: rgba(255,255,255,.07);
+  --opaque-button-border-intensity: 8; --primary-border: hsl(var(--primary)); --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted)); --accent-border: hsl(var(--accent)); --destructive-border: hsl(var(--destructive));
+  --sidebar-primary-border: hsl(var(--sidebar-primary)); --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --app-font-sans: 'DM Sans', sans-serif; --app-font-mono: 'IBM Plex Mono', monospace; --radius: .8rem;
 }
-
-.dark {
-  --button-outline: rgba(255, 255, 255, 0.1);
-  --badge-outline: rgba(255, 255, 255, 0.05);
-
-  --opaque-button-border-intensity: 9; /* In terms of percentages */
-
-  /* Backgrounds applied on top of other backgrounds when hovered/active */
-  --elevate-1: rgba(255, 255, 255, 0.04);
-  --elevate-2: rgba(255, 255, 255, 0.09);
-
-  --background: red; /*replace with H S L */
-
-  --foreground: red; /*replace with H S L */
-
-  --border: red; /*replace with H S L */
-
-  --card: red; /*replace with H S L */
-
-  --card-foreground: red; /*replace with H S L */
-
-  --card-border: red; /*replace with H S L */
-
-  --sidebar: red; /*replace with H S L */
-
-  --sidebar-foreground: red; /*replace with H S L */
-
-  --sidebar-border: red; /*replace with H S L */
-
-  --sidebar-primary: red; /*replace with H S L */
-
-  --sidebar-primary-foreground: red; /*replace with H S L */
-
-  --sidebar-accent: red; /*replace with H S L */
-
-  --sidebar-accent-foreground: red; /*replace with H S L */
-
-  --sidebar-ring: red; /*replace with H S L */
-
-  --popover: red; /*replace with H S L */
-
-  --popover-foreground: red; /*replace with H S L */
-
-  --popover-border: red; /*replace with H S L */
-
-  --primary: red; /*replace with H S L */
-
-  --primary-foreground: red; /*replace with H S L */
-
-  --secondary: red; /*replace with H S L */
-
-  --secondary-foreground: red; /*replace with H S L */
-
-  --muted: red; /*replace with H S L */
-
-  --muted-foreground: red; /*replace with H S L */
-
-  --accent: red; /*replace with H S L */
-
-  --accent-foreground: red; /*replace with H S L */
-
-  --destructive: red; /*replace with H S L */
-
-  --destructive-foreground: red; /*replace with H S L */
-
-  /* Used as the border around inputs. Dark mode: Should be a border that is light enough to have high contrast when rendered on a --card background. More contrast than standard --border */
-  --input: red; /*replace with H S L */
-  --ring: red; /*replace with H S L */
-  --chart-1: red; /*replace with H S L */
-  --chart-2: red; /*replace with H S L */
-  --chart-3: red; /*replace with H S L */
-  --chart-4: red; /*replace with H S L */
-  --chart-5: red; /*replace with H S L */
-
-  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
-  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
-  --shadow-sm:
-    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
-    0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0);
-  --shadow:
-    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
-    0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0);
-  --shadow-md:
-    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
-    0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0);
-  --shadow-lg:
-    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
-    0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0);
-  --shadow-xl:
-    0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0),
-    0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0);
-  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0);
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply font-sans antialiased bg-background text-foreground;
-  }
-}
-
-/**
- * Using the elevate system.
- * Automatic contrast adjustment.
- *
- * <element className="hover-elevate" />
- * <element className="active-elevate-2" />
- *
- * // Using the tailwind utility when a data attribute is "on"
- * <element className="toggle-elevate data-[state=on]:toggle-elevated" />
- * // Or manually controlling the toggle state
- * <element className="toggle-elevate toggle-elevated" />
- *
- * Elevation systems have to handle many states.
- * - not-hovered, vs. hovered vs. active  (three mutually exclusive states)
- * - toggled or not
- * - focused or not (this is not handled with these utilities)
- *
- * Even without handling focused or not, this is six possible combinations that
- * need to be distinguished from eachother visually.
- */
-@layer utilities {
-  /* Hide ugly search cancel button in Chrome until we can style it properly */
-  input[type='search']::-webkit-search-cancel-button {
-    @apply hidden;
-  }
-
-  /* Placeholder styling for contentEditable div */
-  [contenteditable][data-placeholder]:empty::before {
-    content: attr(data-placeholder);
-    color: hsl(var(--muted-foreground));
-    pointer-events: none;
-  }
-
-  /* .no-default-hover-elevate/no-default-active-elevate is an escape hatch so consumers of
-   * buttons/badges can remove the automatic brightness adjustment on interactions
-   * and program their own. */
-  .no-default-hover-elevate {
-  }
-
-  .no-default-active-elevate {
-  }
-
-  /**
-   * Toggleable backgrounds go behind the content. Hoverable/active goes on top.
-   * This way they can stack/compound. Both will overlap the parent's borders!
-   * So borders will be automatically adjusted both on toggle, and hover/active,
-   * and they will be compounded.
-   */
-  .toggle-elevate::before,
-  .toggle-elevate-2::before {
-    content: '';
-    pointer-events: none;
-    position: absolute;
-    inset: 0px;
-    /*border-radius: inherit;   match rounded corners */
-    border-radius: inherit;
-    z-index: -1;
-    /* sits behind content but above backdrop */
-  }
-
-  .toggle-elevate.toggle-elevated::before {
-    background-color: var(--elevate-2);
-  }
-
-  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
-  .border.toggle-elevate::before {
-    inset: -1px;
-  }
-
-  /* Does not work on elements with overflow:hidden! */
-  .hover-elevate:not(.no-default-hover-elevate),
-  .active-elevate:not(.no-default-active-elevate),
-  .hover-elevate-2:not(.no-default-hover-elevate),
-  .active-elevate-2:not(.no-default-active-elevate) {
-    position: relative;
-    z-index: 0;
-  }
-
-  .hover-elevate:not(.no-default-hover-elevate)::after,
-  .active-elevate:not(.no-default-active-elevate)::after,
-  .hover-elevate-2:not(.no-default-hover-elevate)::after,
-  .active-elevate-2:not(.no-default-active-elevate)::after {
-    content: '';
-    pointer-events: none;
-    position: absolute;
-    inset: 0px;
-    /*border-radius: inherit;   match rounded corners */
-    border-radius: inherit;
-    z-index: 999;
-    /* sits in front of content */
-  }
-
-  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
-  .active-elevate:active:not(.no-default-active-elevate)::after {
-    background-color: var(--elevate-1);
-  }
-
-  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
-  .active-elevate-2:active:not(.no-default-active-elevate)::after {
-    background-color: var(--elevate-2);
-  }
-
-  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
-  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
-  .border.active-elevate:not(.no-active-interaction-elevate)::after,
-  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
-  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
-  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
-    inset: -1px;
-  }
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body { margin: 0; background: #101725; color: #e9eef4; font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+a { text-decoration: none; color: inherit; }
+::selection { background: #84d5cc; color: #101725; }
+:focus-visible { outline: 2px solid #92ddd3; outline-offset: 4px; }
+.site { overflow: clip; min-height: 100dvh; background: #101725; }
+.container { width: min(1216px, calc(100% - 48px)); margin-inline: auto; }
+.mono { font-family: 'IBM Plex Mono', monospace; }
+.display { font-family: 'Manrope', sans-serif; letter-spacing: -.055em; }
+.eyebrow { color: #83c9c5; font: 500 11px/1.5 'IBM Plex Mono', monospace; letter-spacing: .13em; text-transform: uppercase; }
+.eyebrow-line { display: inline-flex; align-items: center; gap: 13px; }
+.eyebrow-line::before { content: ''; width: 22px; height: 1px; background: #82c9c2; }
+.muted { color: #a5b3c5; }
+.site-header { position: sticky; top: 0; z-index: 50; background: rgba(16,23,37,.88); backdrop-filter: blur(22px); border-bottom: 1px solid rgba(161,189,210,.13); }
+.header-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.brand { display: inline-flex; align-items: center; gap: 11px; flex: none; font-family: Manrope,sans-serif; font-size: 20px; font-weight: 800; letter-spacing: -.055em; }
+.brand-mark { width: 31px; height: 31px; position: relative; display: grid; place-items: center; border: 1.5px solid #83d8ce; border-radius: 8px; transform: rotate(-12deg); }
+.brand-mark::before, .brand-mark::after { content: ''; position: absolute; border-radius: 50%; }
+.brand-mark::before { width: 16px; height: 16px; border: 1.5px solid #83d8ce; }
+.brand-mark::after { width: 5px; height: 5px; background: #83d8ce; box-shadow: 0 0 0 3px #101725; }
+.brand span span { color: #8bd8d0; font-size: 10px; letter-spacing: .06em; vertical-align: top; margin-left: 3px; }
+.desktop-nav { display: flex; align-items: center; gap: 35px; margin-left: auto; }
+.desktop-nav a, .mobile-panel a { color: #b2bdcb; font-size: 13px; font-weight: 600; transition: color .2s ease; }
+.desktop-nav a:hover, .mobile-panel a:hover { color: #9ae4d8; }
+.header-cta { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 11px 16px; border: 1px solid rgba(149,224,212,.47); border-radius: 7px; color: #a1e3da; font-size: 12px; font-weight: 700; transition: background .2s, transform .2s; }
+.header-cta:hover { background: rgba(131,216,206,.1); transform: translateY(-2px); }
+.mobile-toggle { display: none; border: 1px solid #38485a; background: #1b2938; color: #ecf3f5; border-radius: 8px; padding: 9px; }
+.mobile-panel { display: none; }
+.hero { position: relative; padding: 108px 0 64px; isolation: isolate; background: radial-gradient(ellipse 59% 55% at 77% 22%, rgba(57,84,113,.19), transparent 75%), radial-gradient(ellipse 48% 42% at 12% 94%, rgba(28,94,103,.14), transparent 80%); }
+.hero::before, .grid-section::before { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: -1; background-image: linear-gradient(rgba(161,189,210,.045) 1px, transparent 1px),linear-gradient(90deg,rgba(161,189,210,.045) 1px, transparent 1px); background-size: 58px 58px; mask-image: linear-gradient(to bottom,rgba(0,0,0,.7),transparent 88%); }
+.hero-content { text-align: center; max-width: 950px; margin: 0 auto; }
+.hero-kicker { display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(135,216,207,.26); border-radius: 100px; background: rgba(120,206,199,.06); color: #9ddcd5; padding: 8px 13px; font: 500 10px/1 'IBM Plex Mono',monospace; letter-spacing: .07em; text-transform: uppercase; }
+.kicker-dot { height: 6px; width: 6px; border-radius: 50%; background: #94dfd4; box-shadow: 0 0 0 3px rgba(135,216,207,.12); }
+.hero h1 { margin: 29px auto 21px; font-size: clamp(44px, 5.65vw, 76px); line-height: 1.095; font-weight: 700; max-width: 950px; }
+.hero h1 em { font-style: normal; color: #a0e0d5; }
+.hero-copy { color: #aab9ca; font-size: 17px; line-height: 1.75; max-width: 600px; margin: 0 auto; }
+.hero-actions { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 29px auto 20px; }
+.btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 18px; border: 1px solid #9fe4d9; background: #a6e8dd; color: #142834; border-radius: 7px; padding: 14px 19px; font-size: 13px; line-height: 1.3; font-weight: 800; box-shadow: 0 6px 24px rgba(105,208,195,.13); transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
+.btn-primary:hover { transform: translateY(-3px); background: #c0f3e8; box-shadow: 0 13px 28px rgba(105,208,195,.19); }
+.btn-primary:disabled { opacity: .65; cursor: wait; transform: none; }
+.btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid #3a4a5c; border-radius: 7px; padding: 14px 18px; font-size: 13px; font-weight: 700; color: #e0e9f0; background: #1b2837; transition: border-color .2s, transform .2s; }
+.btn-secondary:hover { border-color: #8bcfc8; transform: translateY(-3px); }
+.hero-fine { color: #74899d; font: 11px/1.5 'IBM Plex Mono',monospace; }
+.product-wrap { position: relative; margin: 72px auto 0; max-width: 1100px; }
+.product-halo { position: absolute; inset: 4% 10% -5%; background: #4ba69d; filter: blur(100px); opacity: .1; pointer-events: none; }
+.product-window { position: relative; border: 1px solid #46566b; border-radius: 13px; overflow: hidden; background: #141f2f; box-shadow: 0 45px 100px rgba(3,9,20,.45), 0 0 0 7px rgba(162,195,216,.035); text-align: left; }
+.window-top { height: 48px; display: flex; align-items: center; justify-content: space-between; padding: 0 19px; background: #1a2636; border-bottom: 1px solid #354458; }
+.window-dots { display: flex; gap: 7px; }.window-dots i { height: 7px; width: 7px; background: #617387; border-radius: 50%; }.window-dots i:first-child { background: #829aa7; }
+.window-label { color: #8294a8; font: 10px 'IBM Plex Mono',monospace; letter-spacing: .045em; }
+.window-status { color: #9ddbcf; font: 10px 'IBM Plex Mono',monospace; display: flex; align-items: center; gap: 7px; }
+.window-body { display: grid; grid-template-columns: 190px minmax(0,1fr); min-height: 550px; }
+.app-sidebar { background: #172333; border-right: 1px solid #334356; padding: 22px 12px; }
+.sidebar-title { color: #768a9f; font: 10px 'IBM Plex Mono',monospace; letter-spacing: .09em; text-transform: uppercase; margin: 0 12px 17px; }
+.sidebar-link { display: flex; align-items: center; gap: 10px; color: #9eafc1; border-radius: 6px; padding: 10px 12px; font-size: 11px; font-weight: 600; margin-bottom: 4px; }
+.sidebar-link.active { color: #a8e7de; background: #263d48; }
+.sidebar-link svg { flex: none; }
+.sidebar-bottom { border-top: 1px solid #324253; margin: 27px 12px 0; padding-top: 19px; color: #75889a; font: 10px/1.7 'IBM Plex Mono',monospace; }
+.app-main { min-width: 0; padding: 24px 27px 26px; }
+.app-crumb { font: 10px 'IBM Plex Mono',monospace; color: #8294a7; margin-bottom: 18px; }
+.app-crumb strong { color: #b9c7d7; font-weight: 500; }
+.app-head { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; padding-bottom: 22px; border-bottom: 1px solid #334356; }
+.app-head h3 { font: 700 20px/1.2 Manrope,sans-serif; letter-spacing: -.035em; margin: 0 0 8px; }
+.app-subtitle { color: #8194a7; font-size: 11px; }
+.app-tag { flex: none; display: inline-flex; gap: 7px; align-items: center; color: #a5e3d7; border: 1px solid #39645f; background: #203c40; padding: 7px 9px; border-radius: 5px; font: 9px 'IBM Plex Mono',monospace; }
+.app-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(230px, 1fr); gap: 13px; margin-top: 18px; }
+.app-panel { background: #1b2a3b; border: 1px solid #35495b; border-radius: 8px; padding: 16px; min-width: 0; }
+.app-panel-title { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: #cbd9e5; font: 600 10px 'IBM Plex Mono',monospace; letter-spacing: .03em; margin-bottom: 16px; }
+.app-panel-title svg { color: #94d9d0; }
+.timeline { position: relative; padding-left: 19px; border-left: 1px solid #4c6070; margin-left: 7px; }
+.timeline-item { position: relative; padding-bottom: 16px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before { content:''; width: 7px; height: 7px; border-radius: 50%; position: absolute; left: -23px; top: 3px; background: #82d6cd; box-shadow: 0 0 0 3px #264248; }
+.timeline-item:nth-child(2)::before { background: #a7b2e8; box-shadow: 0 0 0 3px #313b5a; }.timeline-item:nth-child(3)::before { background: #d9bf8b; box-shadow: 0 0 0 3px #4a413d; }
+.timeline-item b { display: block; color: #e2eaf0; font-size: 11px; font-weight: 600; margin-bottom: 5px; }
+.timeline-item small { display: block; color: #899db0; font: 9px/1.5 'IBM Plex Mono',monospace; }
+.source-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.source-pill { border: 1px solid #43576a; border-radius: 4px; color: #a9bccc; background: #223447; padding: 6px 8px; font: 9px 'IBM Plex Mono',monospace; white-space: nowrap; }
+.summary-text { color: #b8c7d5; font-size: 11px; line-height: 1.65; margin: 0 0 13px; }
+.source-link { color: #9eddd5; font: 9px 'IBM Plex Mono',monospace; }
+.review-card { background: #283143; border-left: 2px solid #b4a4de; padding: 12px 13px; border-radius: 3px; }
+.review-card p { color: #cad2df; font-size: 10px; line-height: 1.55; margin: 7px 0 0; }
+.review-label { color: #c8b9ed; font: 9px 'IBM Plex Mono',monospace; text-transform: uppercase; }
+.advisor-card { border-top: 1px solid #3a4b5c; padding-top: 12px; color: #b6c6d4; font-size: 10px; line-height: 1.55; }
+.advisor-card strong { display: block; color: #dae5ed; font-weight: 600; margin-bottom: 5px; }
+.caption { text-align: center; margin: 20px auto 0; color: #74889b; font: 10px/1.6 'IBM Plex Mono',monospace; }
+.section { padding: 125px 0; position: relative; }
+.section-heading { max-width: 700px; }
+.section-heading h2, .split-copy h2 { font-size: clamp(34px,4.2vw,54px); line-height: 1.14; font-weight: 700; margin: 20px 0; }
+.section-heading p, .split-copy p { color: #aab8c8; font-size: 16px; line-height: 1.8; }
+.problem { border-top: 1px solid #263649; background: #131d2d; }
+.problem-top { display: grid; grid-template-columns: 1fr .78fr; gap: 90px; align-items: end; }
+.problem-top .side-note { padding-left: 22px; border-left: 1px solid #526778; color: #aab8c8; font-size: 17px; line-height: 1.75; margin-bottom: 12px; }
+.fragment-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; margin-top: 57px; }
+.fragment { min-height: 145px; padding: 18px; border: 1px solid #34475a; border-radius: 8px; background: #1b293a; display: flex; flex-direction: column; justify-content: space-between; transition: transform .25s,border-color .25s; }
+.fragment:hover { transform: translateY(-5px); border-color: #7dbab6; }
+.fragment svg { color: #8ca9bd; }.fragment span { color: #dee7ee; font-size: 12px; font-weight: 600; }.fragment small { color: #738a9e; font: 9px 'IBM Plex Mono',monospace; }
+.fragment-callout { display: flex; align-items: center; gap: 18px; margin-top: 25px; color: #a5e0d7; font: 11px/1.6 'IBM Plex Mono',monospace; }
+.fragment-callout::before { content: ''; width: 34px; height: 1px; background: #79c9c2; }
+.insight { background: #172435; border-top: 1px solid #314658; border-bottom: 1px solid #314658; padding: 29px 0; }
+.insight-inner { display: grid; grid-template-columns: 210px 1fr; align-items: center; gap: 30px; }
+.insight-label { color: #93d8d1; font: 10px/1.7 'IBM Plex Mono',monospace; letter-spacing: .07em; text-transform: uppercase; }
+.insight p { color: #c7d4e0; font-size: 16px; line-height: 1.65; margin: 0; }.insight p strong { color: #e9f2f4; font-weight: 600; }
+.workflow { background: #101725; }
+.workflow-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; }.workflow-head p { max-width: 350px; color: #aab8c8; line-height: 1.7; }
+.steps { display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid #415366; margin-top: 50px; }
+.step { padding: 34px 24px 0 0; position: relative; }
+.step::before { content:''; width: 9px; height: 9px; border: 2px solid #9bddcf; background: #101725; border-radius: 50%; position: absolute; top: -5px; left: 0; }
+.step-number { color: #6f9b9c; font: 11px 'IBM Plex Mono',monospace; }.step h3 { font: 700 26px Manrope,sans-serif; letter-spacing: -.04em; margin: 24px 0 12px; }.step p { color: #9cabbc; font-size: 13px; line-height: 1.7; max-width: 235px; margin: 0; }
+.step:nth-child(2)::before { border-color: #aab7e6; }.step:nth-child(3)::before { border-color: #d3bfe4; }.step:nth-child(4)::before { border-color: #a4e3d9; }
+.capabilities { background: #152132; }
+.cap-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 90px; align-items: start; }.cap-layout .section-heading { position: sticky; top: 115px; }
+.cap-list { border-top: 1px solid #3b4f60; }.cap-item { display: grid; grid-template-columns: 37px 1fr; gap: 16px; padding: 25px 0; border-bottom: 1px solid #3b4f60; }.cap-icon { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 7px; background: #254044; color: #9addd3; }.cap-item h3 { font: 700 16px Manrope,sans-serif; margin: 1px 0 8px; }.cap-item p { color: #9fb0bf; line-height: 1.65; font-size: 13px; margin: 0; }
+.compare { background: #101725; }.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; margin-top: 47px; }.compare-card { border: 1px solid #3a4b5d; border-radius: 10px; padding: 32px; background: #192434; }.compare-card.after { border-color: #3c776f; background: linear-gradient(140deg,#1b343b,#172b38 70%); }.compare-card header { display:flex; justify-content: space-between; align-items:center; border-bottom:1px solid #3a4b5d; padding-bottom:20px; margin-bottom:20px; }.compare-card header b { font: 500 11px 'IBM Plex Mono',monospace; color:#8496aa; text-transform:uppercase; letter-spacing:.08em; }.compare-card.after header b { color:#9ddfd5; }.compare-card ul { padding: 0; margin: 0; list-style: none; }.compare-card li { display:flex; align-items: start; gap:12px; color:#b5c3d0; font-size:14px; line-height:1.5; padding:11px 0; }.compare-card li svg { flex:none; margin-top:2px; color:#8294a8; }.compare-card.after li svg { color:#98dfd4; }
+.integrity { background: #1b2a3a; border-top: 1px solid #3a4e5e; border-bottom: 1px solid #3a4e5e; }.integrity-layout { display:grid; grid-template-columns: .85fr 1fr; gap: 120px; align-items:center; }.integrity-visual { border:1px solid #4a6371; border-radius: 10px; background:#182635; padding:23px; box-shadow: 14px 14px 0 rgba(7,16,27,.2); }.integrity-visual-top { color:#a6b9c7; font:10px 'IBM Plex Mono',monospace; padding-bottom:17px; border-bottom:1px solid #3b5261; display:flex; justify-content:space-between; }.integrity-note { font-size:15px; line-height:1.75; color:#dbe7eb; padding:24px 0; }.integrity-evidence { display:flex; justify-content:space-between; gap:10px; border:1px solid #47766f; background:#24413f; border-radius:5px; padding:13px; color:#b2e4d9; font:10px 'IBM Plex Mono',monospace; }.integrity-caution { color:#9baebd; font-size:12px; line-height:1.7; margin-top:17px; }
+.audience { background:#101725; }.audience-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; margin-top:46px; }.audience-card { border-top:1px solid #4a6170; padding:25px 20px 0 0; }.audience-card span { color:#84cac4; font:11px 'IBM Plex Mono',monospace; }.audience-card h3 { font:700 19px Manrope,sans-serif; margin:20px 0 10px; }.audience-card p { color:#9cabbc; font-size:13px; line-height:1.75; }
+.founders { background:#152132; border-top:1px solid #2d4051; }.founder-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:end; }.founder-copy p { max-width:480px; }.founder-list { border-top:1px solid #42566a; }.founder-person { display:flex; align-items:center; justify-content:space-between; gap:15px; border-bottom:1px solid #42566a; padding:25px 0; }.founder-person strong { font:700 17px Manrope,sans-serif; }.founder-person span { color:#81a5ad; font:10px 'IBM Plex Mono',monospace; }
+.beta { padding: 118px 0 130px; background: radial-gradient(ellipse 70% 90% at 54% 105%,rgba(41,115,112,.18),transparent 73%),#101725; }.beta-layout { display:grid; grid-template-columns:.86fr 1.14fr; gap: 100px; align-items:start; }.beta-copy { padding-top:18px; }.beta-copy h2 { font:700 clamp(39px,4.5vw,60px)/1.14 Manrope,sans-serif; letter-spacing:-.055em; margin:20px 0; }.beta-copy p { color:#a9b9c8; font-size:15px; line-height:1.8; max-width:420px; }.beta-points { margin-top:38px; display:grid; gap:16px; }.beta-points div { color:#bdced6; display:flex; gap:12px; align-items:center; font-size:13px; }.beta-points svg { color:#9bded4; }.form-card { border:1px solid #4a6270; border-radius:11px; background:#1b2a3a; padding:32px; box-shadow:0 24px 75px rgba(4,13,24,.19); }.form-card h3 { font:700 22px Manrope,sans-serif; letter-spacing:-.04em; margin:0 0 7px; }.form-card-intro { color:#98aaba; font-size:12px; margin:0 0 26px; }.field-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }.field { margin-bottom:18px; }.field label { color:#d3dfe7; font-size:12px; font-weight:600; margin-bottom:9px; display:block; }.field input, .field textarea { width:100%; border:1px solid #4a5e70; background:#142231; border-radius:6px; padding:12px 13px; color:#e9f0f3; font-size:13px; outline:none; transition:border-color .2s,background .2s; }.field input::placeholder,.field textarea::placeholder { color:#718697; }.field input:focus,.field textarea:focus { border-color:#8edbcf; background:#192a38; }.field textarea { resize:vertical; min-height:93px; }.field-error { color:#ffafa7; font-size:11px; margin-top:6px; }.form-submit { width:100%; margin-top:4px; }.form-footnote { text-align:center; color:#8296a7; font-size:11px; margin:15px 0 0; }.form-alert { border-radius:6px; padding:12px 14px; font-size:12px; line-height:1.55; margin-bottom:20px; }.form-alert.error { border:1px solid #965f61; background:#452e3a; color:#ffcac2; }.success-state { text-align:center; padding:40px 12px; }.success-icon { width:52px; height:52px; border:1px solid #76cbbd; border-radius:50%; display:grid; place-items:center; background:#284944; color:#a5e7d8; margin:0 auto 20px; }.success-state p { color:#a8bbc6; line-height:1.7; font-size:14px; }.success-state button { margin-top:15px; background:transparent; color:#a7e3da; border:0; text-decoration:underline; text-underline-offset:4px; }
+.footer { background:#0d1522; border-top:1px solid #2e4050; padding:46px 0 29px; }.footer-main { display:flex; justify-content:space-between; align-items:start; gap:30px; }.footer p { color:#8296a7; font-size:12px; margin:13px 0 0; max-width:360px; line-height:1.7; }.footer-links { display:flex; gap:25px; color:#b3c5ce; font-size:12px; }.footer-links a:hover { color:#a9e3d9; }.footer-bottom { border-top:1px solid #293b4c; margin-top:45px; padding-top:22px; display:flex; justify-content:space-between; gap:20px; color:#6f8395; font:10px 'IBM Plex Mono',monospace; }
+.reveal { opacity:0; transform:translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }.reveal.visible { opacity:1; transform:translateY(0); }
+@media(max-width:900px) { .desktop-nav { gap:17px; }.header-cta { display:none; }.window-body { grid-template-columns:150px minmax(0,1fr); }.app-grid { grid-template-columns:1fr 1fr; }.problem-top,.cap-layout,.integrity-layout,.beta-layout { gap:45px; }.fragment-grid { grid-template-columns:repeat(3,1fr); }.fragment { min-height:125px; }.section { padding:95px 0; } }
+@media(max-width:700px) { .container { width:min(100% - 36px, 540px); }.header-inner { min-height:66px; }.brand { font-size:19px; }.desktop-nav,.header-cta { display:none; }.mobile-toggle { display:grid; place-items:center; }.mobile-panel { display:flex; flex-direction:column; gap:0; padding:8px 24px 18px; border-top:1px solid #34485a; background:#172334; }.mobile-panel a { padding:12px 4px; font-size:14px; }.mobile-panel .mobile-join { color:#9fe3d9; }.hero { padding:78px 0 50px; }.hero h1 { font-size:clamp(39px,11vw,58px); line-height:1.13; }.hero-copy { font-size:15px; }.hero-actions { flex-direction:column; align-items:stretch; max-width:310px; }.hero-actions a { width:100%; }.product-wrap { width:calc(100% - 26px); margin-top:55px; }.window-body { display:block; min-height:auto; }.app-sidebar { display:none; }.app-main { padding:18px 15px; }.app-grid { grid-template-columns:1fr; }.app-panel:nth-child(3),.app-panel:nth-child(4) { display:none; }.app-head h3 { font-size:16px; }.app-tag { font-size:8px; }.window-label { display:none; }.section { padding:82px 0; }.section-heading h2,.split-copy h2 { font-size:37px; }.problem-top,.workflow-head,.cap-layout,.integrity-layout,.founder-layout,.beta-layout { display:block; }.problem-top .side-note { margin-top:30px; }.fragment-grid { grid-template-columns:repeat(2,1fr); gap:8px; margin-top:40px; }.fragment { min-height:115px; padding:14px; }.fragment:last-child { grid-column:span 2; min-height:100px; }.insight-inner { grid-template-columns:1fr; gap:10px; }.insight p { font-size:14px; }.steps { grid-template-columns:1fr 1fr; row-gap:32px; }.step { padding-right:12px; }.step h3 { font-size:22px; }.workflow-head p { max-width:none; }.cap-layout .section-heading { position:static; margin-bottom:40px; }.compare-grid,.audience-grid { grid-template-columns:1fr; }.compare-card { padding:25px; }.integrity-visual { margin-top:40px; }.founder-list { margin-top:36px; }.beta-copy { padding:0; }.form-card { margin-top:42px; padding:23px; }.field-grid { grid-template-columns:1fr; gap:0; }.footer-main,.footer-bottom { flex-direction:column; }.footer-links { flex-wrap:wrap; gap:18px; } }
+@media(max-width:390px) { .fragment-grid { grid-template-columns:1fr 1fr; }.fragment span { font-size:11px; }.app-tag { display:none; }.steps { grid-template-columns:1fr; }.step { padding-top:25px; }.step h3 { margin-top:12px; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } .reveal { opacity:1; transform:none; } }
