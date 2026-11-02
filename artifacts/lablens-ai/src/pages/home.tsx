@@ -225,7 +225,7 @@ function AudienceAndFounders() {
   </div></section>
   <section className="section founders" id="team"><div className="container founder-layout">
     <Reveal className="section-heading founder-copy"><span className="eyebrow eyebrow-line">08 / FROM THE FOUNDERS</span><h2 className="display">Built around a real research problem.</h2><p>LabLens AI began with a familiar question: why does understanding an experiment often take almost as much work as doing it? We are exploring a more connected way to keep the work and its context together.</p></Reveal>
-    <Reveal><div className="founder-list"><div className="founder-person"><strong>Muhammad Sohail</strong><span>CO-FOUNDER</span></div><div className="founder-person"><strong>Ategeka Musinguzi</strong><span>CO-FOUNDER</span></div></div></Reveal>
+    <Reveal><div className="founder-list"><div className="founder-person"><strong>Muhammad Sohail</strong></div><div className="founder-person"><strong>Ategeka Musinguzi</strong></div></div></Reveal>
   </div></section></>;
 }
 
