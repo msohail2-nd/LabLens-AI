@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useCreateBetaSignup } from '@workspace/api-client-react';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { ArrowDown, ArrowRight, Camera, Check, CheckCircle2, ChevronRight, CircleHelp, ClipboardList, FileText, FolderOpen, GitBranch, Layers3, Link2, Menu, Monitor, NotebookPen, Search, ShieldCheck, Sparkles, X } from 'lucide-react';
+import { ArrowDown, ArrowRight, Camera, Check, CheckCircle2, ChevronRight, ClipboardList, FileText, FolderOpen, GitBranch, Layers3, Link2, Menu, Monitor, NotebookPen, Search, ShieldCheck, Sparkles, X } from 'lucide-react';
 
 const signupSchema = z.object({
   name: z.string().trim().min(1, 'Please enter your name.').max(120, 'Keep your name under 120 characters.'),
@@ -63,7 +63,7 @@ function ProductWindow() {
   return <div className="product-wrap" id="preview">
     <div className="product-halo" aria-hidden="true" />
     <div className="product-window" data-testid="panel-product-preview">
-      <div className="window-top"><div className="window-dots" aria-hidden="true"><i /><i /><i /></div><div className="window-label">LABLENS / EXPERIMENT RECORD</div><div className="window-status"><span className="kicker-dot" /> CONNECTED RECORD</div></div>
+      <div className="window-top"><div className="window-dots" aria-hidden="true"><i /><i /><i /></div><div className="window-label">LABLENS / CONCEPT RECORD</div><div className="window-status">ILLUSTRATIVE · NOT LIVE</div></div>
       <div className="window-body">
         <aside className="app-sidebar" aria-label="Example product navigation">
           <div className="sidebar-title">WORKSPACE / RESEARCH</div>
@@ -96,7 +96,7 @@ function ProductWindow() {
               <div style={{ borderTop: '1px solid #3a4b5c', marginTop: 18, paddingTop: 13, color: '#879cae', font: "9px 'IBM Plex Mono', monospace" }}>Sources remain attached to the record</div>
             </div>
             <div className="app-panel">
-              <div className="app-panel-title"><span>AI-ASSISTED SUMMARY</span><Sparkles size={14} /></div>
+              <div className="app-panel-title"><span>AI SUMMARY · CONCEPT</span><Sparkles size={14} /></div>
               <p className="summary-text">Pilot results led to a longer incubation window. The revised analysis uses the updated baseline, but the reason for excluding two wells still needs researcher confirmation.</p>
               <div className="source-link">Grounded in notebook entry + analysis_v3.py</div>
             </div>
@@ -119,12 +119,13 @@ function Hero() {
       <Reveal className="hero-content">
         <span className="hero-kicker"><span className="kicker-dot" /> BUILT FOR THE WAY RESEARCH ACTUALLY HAPPENS</span>
         <h1 className="display">Stop rebuilding experiments from <em>scattered records.</em></h1>
-        <p className="hero-copy">Your work lives across notebooks, instrument computers, photos, files, and half-finished notes. LabLens AI helps you reconnect the evidence, recover the context, and move forward with confidence in what you can verify.</p>
+        <p className="hero-copy">Research evidence is scattered across notebooks, instrument files, PDFs, project folders, and experimental history. LabLens AI is being developed as an AI-powered research continuity and knowledge-retrieval layer to connect those records and help reconstruct how the work evolved—alongside the LIMS and ELN tools you already use.</p>
         <div className="hero-actions">
           <a href="#beta" className="btn-primary" data-testid="link-hero-beta">Join the beta <ArrowRight size={16} aria-hidden="true" /></a>
           <a href="#preview" className="btn-secondary" data-testid="link-hero-preview">Explore the product <ArrowDown size={15} aria-hidden="true" /></a>
         </div>
-        <div className="hero-fine">For graduate researchers · Built for research continuity</div>
+        <div className="hero-fine">For graduate researchers, academic laboratories &amp; industrial R&amp;D</div>
+        <p className="availability-note">Landing page and beta signup only. No file upload, AI search, instrument integrations, or experiment workspace is available yet. Product view below is illustrative.</p>
       </Reveal>
       <Reveal><ProductWindow /></Reveal>
     </div>
@@ -152,55 +153,58 @@ function Problem() {
 }
 
 const steps = [
-  { number: '01', title: 'Capture', body: 'Bring in the notes, images, output, and decisions you already create as part of the work.' },
-  { number: '02', title: 'Connect', body: 'Link related materials to an experiment so the record reflects the full path, not a single file.' },
-  { number: '03', title: 'Recover', body: 'Find source-backed context and revisit what changed, when, and where it was recorded.' },
-  { number: '04', title: 'Continue', body: 'Prepare the next step or an advisor update without starting the reconstruction from scratch.' },
+  { number: '01', title: 'Search', body: 'Planned: search a unified research record spanning notebooks, instrument files, PDFs, project folders, and experimental history.' },
+  { number: '02', title: 'Connect', body: 'Planned: link related material across tools and reconstruct the context around an experiment.' },
+  { number: '03', title: 'Review', body: 'Planned: inspect AI-generated summaries with source citations, then confirm or correct them yourself.' },
+  { number: '04', title: 'Continue', body: 'Planned: carry a traceable account of decisions and evidence into the next run or an advisor update.' },
 ];
 function Workflow() {
   return <section className="section workflow" id="workflow"><div className="container">
-    <Reveal className="workflow-head"><div className="section-heading"><span className="eyebrow eyebrow-line">02 / A CONTINUOUS RECORD</span><h2 className="display">From loose evidence<br />to a living record.</h2></div><p>LabLens follows the natural rhythm of research. Not a new reporting ritual — a clearer view of the work already happening.</p></Reveal>
+    <Reveal className="workflow-head"><div className="section-heading"><span className="eyebrow eyebrow-line">02 / A CONTINUOUS RECORD</span><h2 className="display">From loose evidence<br />to a living record.</h2></div><p>These are planned beta capabilities, not features available today. LabLens is intended to complement your existing LIMS and ELN, not replace either one.</p></Reveal>
     <div className="steps">{steps.map(step => <Reveal key={step.number}><div className="step" data-testid={`step-${step.title.toLowerCase()}`}><span className="step-number">{step.number} / 04</span><h3>{step.title}</h3><p>{step.body}</p></div></Reveal>)}</div>
   </div></section>;
 }
 
 const capabilities = [
-  { icon: Link2, title: 'Experiment-centered records', description: 'Keep the notebook entry, instrument output, photo, analysis, and decision together around the experiment they belong to.' },
-  { icon: Search, title: 'Context you can trace', description: 'Navigate back to connected material when you need to check where a detail came from.' },
-  { icon: Sparkles, title: 'Source-backed AI assistance', description: 'Generate a starting summary from the available record, with source references rather than unsupported conclusions.' },
-  { icon: ShieldCheck, title: 'Review stays with the researcher', description: 'Flag uncertain details and suggestions for confirmation. Your judgment remains part of the scientific record.' },
-  { icon: ClipboardList, title: 'Advisor-ready progress updates', description: 'Turn the record into a draft update of what happened, what changed, and what still needs attention.' },
+  { icon: Search, title: 'Unified research record search', description: 'Planned: search across connected notebooks, instrument files, PDFs, project folders, and experimental history.' },
+  { icon: Link2, title: 'Context linking & experiment reconstruction', description: 'Planned: connect evidence across tools to retrace which conditions, changes, and decisions belong to an experiment.' },
+  { icon: Sparkles, title: 'Source-cited AI summaries', description: 'Planned: generate summaries that point to their source material and make uncertainty visible.' },
+  { icon: ShieldCheck, title: 'Human-reviewed suggestions', description: 'Planned: researchers check, correct, or reject AI suggestions before relying on them.' },
+  { icon: ClipboardList, title: 'Traceable updates', description: 'Planned: prepare a draft progress update that links back to relevant evidence for review.' },
 ];
 function Capabilities() {
   return <section className="section capabilities" id="product"><div className="container cap-layout">
-    <div className="section-heading"><span className="eyebrow eyebrow-line">03 / THE PRODUCT</span><h2 className="display">Less detective work.<br />More continuity.</h2><p>Tools for keeping your experiment legible to your future self — and to the people you work with.</p></div>
+    <div className="section-heading"><span className="eyebrow eyebrow-line">03 / THE PRODUCT · PLANNED</span><h2 className="display">Less detective work.<br />More continuity.</h2><p>Proposed beta capabilities for keeping experiments legible across the tools your team already uses. Nothing here is currently available in a working product.</p></div>
     <div className="cap-list">{capabilities.map(({ icon: Icon, title, description }) => <Reveal key={title}><article className="cap-item" data-testid={`capability-${title.toLowerCase().replace(/\s/g, '-')}`}><div className="cap-icon"><Icon size={17} strokeWidth={1.8} aria-hidden="true" /></div><div><h3>{title}</h3><p>{description}</p></div></article></Reveal>)}</div>
   </div></section>;
 }
 
 function Comparison() {
-  return <section className="section compare"><div className="container">
-    <Reveal className="section-heading"><span className="eyebrow eyebrow-line">04 / A DIFFERENT WORKFLOW</span><h2 className="display">The same research.<br />A clearer thread.</h2></Reveal>
+  return <section className="section compare" id="comparison"><div className="container">
+    <Reveal className="section-heading"><span className="eyebrow eyebrow-line">04 / BUILT TO COMPLEMENT YOUR STACK</span><h2 className="display">Different tools.<br />Different jobs.</h2><p>LIMS and ELNs are established parts of research operations. LabLens is being planned as a continuity layer across them and other project sources—not a replacement.</p></Reveal>
     <div className="compare-grid">
-      <Reveal><article className="compare-card"><header><b>WITHOUT A CONNECTED RECORD</b><CircleHelp size={17} color="#8b9cac" /></header><ul>
-        <li><X size={16} /> Search several folders to find the right file version</li>
-        <li><X size={16} /> Reconstruct a protocol change from memory</li>
-        <li><X size={16} /> Piece together an advisor update at the last minute</li>
-        <li><X size={16} /> Wonder whether a detail was documented at all</li>
-      </ul></article></Reveal>
-      <Reveal><article className="compare-card after"><header><b>WITH LABLENS AI</b><CheckCircle2 size={17} color="#9ddfd4" /></header><ul>
-        <li><Check size={16} /> Related sources organized around the experiment</li>
-        <li><Check size={16} /> A visible trail of changes and supporting material</li>
-        <li><Check size={16} /> A grounded draft to review before sharing</li>
-        <li><Check size={16} /> Open questions made explicit, not filled in by guesswork</li>
-      </ul></article></Reveal>
+      <Reveal><article className="compare-card role-card"><header><b>LIMS</b><Layers3 size={17} color="#8b9cac" /></header><p className="role-focus">Common focus</p><p>Sample records, testing workflows, quality control, and traceability.</p><p className="role-note">Capabilities vary by system and configuration.</p></article></Reveal>
+      <Reveal><article className="compare-card role-card"><header><b>ELNs</b><NotebookPen size={17} color="#8b9cac" /></header><p className="role-focus">Common focus</p><p>Capturing and documenting experiments, protocols, observations, and results.</p><p className="role-note">Some ELNs also provide search and AI features.</p></article></Reveal>
+      <Reveal><article className="compare-card role-card after"><header><b>LABLENS · PLANNED</b><Link2 size={17} color="#9ddfd4" /></header><p className="role-focus">Intended focus</p><p>Cross-tool evidence linking, retrieval, experiment-history reconstruction, and research continuity.</p><p className="role-note">Some LIMS and ELNs already offer search or AI. LabLens is not claiming otherwise.</p></article></Reveal>
+    </div>
+    <div className="comparison-caveat">The distinction is the planned cross-tool continuity workflow—not a claim that existing systems lack search, AI, or traceability.</div>
+  </div></section>;
+}
+
+function Scenarios() {
+  return <section className="section scenarios" id="scenarios"><div className="container">
+    <Reveal className="section-heading"><span className="eyebrow eyebrow-line">05 / EXAMPLES FROM CHEMISTRY &amp; MATERIALS</span><h2 className="display">Follow the evidence,<br />not a file trail.</h2><p>Illustrative use cases for a future product. These are examples of intended workflows, not claims about a working feature.</p></Reveal>
+    <div className="scenario-list">
+      <Reveal><article className="scenario"><span className="scenario-index">01 / OXIDATION SERIES</span><div><h3>Nickel oxidation, across NMR and XRD</h3><p>Imagine linking an oxidation experiment’s notebook observations to NMR spectra, XRD files, and the project folder where analyses live—then retracing which run produced which evidence.</p></div></article></Reveal>
+      <Reveal><article className="scenario"><span className="scenario-index">02 / EXACT CONDITIONS</span><div><h3>Find the conditions behind a result</h3><p>Retrieve the recorded temperature, solvent ratio, and reaction time tied to a specific sample, with a path back to the original notebook entry or instrument file for verification.</p></div></article></Reveal>
+      <Reveal><article className="scenario"><span className="scenario-index">03 / GROUP UPDATE</span><div><h3>Prepare a traceable advisor update</h3><p>Assemble a draft of what changed between runs, which measurements support the account, and what remains uncertain—then have the researcher review it before sharing.</p></div></article></Reveal>
     </div>
   </div></section>;
 }
 
 function Integrity() {
   return <section className="section integrity"><div className="container integrity-layout">
-    <Reveal className="split-copy"><span className="eyebrow eyebrow-line">05 / RESEARCH INTEGRITY</span><h2 className="display">AI can help connect the dots.<br />It cannot make the call.</h2><p>A useful research record makes its basis visible. LabLens is designed to support interpretation, not manufacture certainty: summaries point back to sources, uncertainties remain visible, and researchers review suggestions before relying on them.</p></Reveal>
+    <Reveal className="split-copy"><span className="eyebrow eyebrow-line">06 / RESEARCH INTEGRITY</span><h2 className="display">AI can help connect the dots.<br />It cannot make the call.</h2><p>A useful research record makes its basis visible. Planned summaries would point back to sources, keep uncertainties visible, and require researcher review before anyone relies on them.</p></Reveal>
     <Reveal><div className="integrity-visual" data-testid="panel-research-integrity">
       <div className="integrity-visual-top"><span>RECORD NOTE / EXP-024</span><span>REVIEW PENDING</span></div>
       <div className="integrity-note">“Incubation was extended after the pilot run. The exclusion rationale for wells B7–B8 has not yet been confirmed.”</div>
@@ -212,15 +216,15 @@ function Integrity() {
 
 function AudienceAndFounders() {
   return <><section className="section audience" id="researchers"><div className="container">
-    <Reveal className="section-heading"><span className="eyebrow eyebrow-line">06 / WHO IT'S FOR</span><h2 className="display">For the people doing<br />the work at the bench.</h2><p>Especially when the work is complex, iterative, and spread across more places than any one notebook can hold.</p></Reveal>
+    <Reveal className="section-heading"><span className="eyebrow eyebrow-line">07 / WHO IT'S FOR</span><h2 className="display">For the people doing<br />the work at the bench.</h2><p>Especially when the work is complex, iterative, and spread across more places than any one notebook can hold.</p></Reveal>
     <div className="audience-grid">
       <Reveal><article className="audience-card"><span>01 / GRADUATE RESEARCHERS</span><h3>Keep your own thread.</h3><p>Return to an experiment weeks later and see the notes, files, and reasoning that shaped it.</p></article></Reveal>
-      <Reveal><article className="audience-card"><span>02 / ROTATING PROJECTS</span><h3>Pick up where you left off.</h3><p>Carry context between runs, analyses, meetings, and the next version of a protocol.</p></article></Reveal>
-      <Reveal><article className="audience-card"><span>03 / RESEARCH TEAMS</span><h3>Make progress easier to share.</h3><p>Give advisors and collaborators a clearer update while retaining the underlying trail.</p></article></Reveal>
+      <Reveal><article className="audience-card"><span>02 / ACADEMIC LABORATORIES</span><h3>Pick up where you left off.</h3><p>Carry context between runs, analyses, meetings, and the next version of a protocol.</p></article></Reveal>
+      <Reveal><article className="audience-card"><span>03 / INDUSTRIAL R&amp;D TEAMS</span><h3>Make progress easier to share.</h3><p>Keep evidence and project history in view when work moves between experiments, analyses, and updates.</p></article></Reveal>
     </div>
   </div></section>
   <section className="section founders" id="team"><div className="container founder-layout">
-    <Reveal className="section-heading founder-copy"><span className="eyebrow eyebrow-line">07 / FROM THE FOUNDERS</span><h2 className="display">Built around a real research problem.</h2><p>LabLens AI began with a familiar question: why does understanding an experiment often take almost as much work as doing it? We are building a more connected way to keep the work and its context together.</p></Reveal>
+    <Reveal className="section-heading founder-copy"><span className="eyebrow eyebrow-line">08 / FROM THE FOUNDERS</span><h2 className="display">Built around a real research problem.</h2><p>LabLens AI began with a familiar question: why does understanding an experiment often take almost as much work as doing it? We are exploring a more connected way to keep the work and its context together.</p></Reveal>
     <Reveal><div className="founder-list"><div className="founder-person"><strong>Muhammad Sohail</strong><span>CO-FOUNDER</span></div><div className="founder-person"><strong>Ategeka Musinguzi</strong><span>CO-FOUNDER</span></div></div></Reveal>
   </div></section></>;
 }
@@ -274,10 +278,10 @@ function BetaForm() {
 
 function Beta() {
   return <section className="beta" id="beta"><div className="container beta-layout">
-    <Reveal className="beta-copy"><span className="eyebrow eyebrow-line">08 / EARLY ACCESS</span><h2>Help shape a better research record.</h2><p>We're inviting graduate researchers into the LabLens AI beta. Tell us how your records get scattered, and help us build around the workflows that actually need support.</p>
+    <Reveal className="beta-copy"><span className="eyebrow eyebrow-line">09 / EARLY ACCESS</span><h2>Help shape a better research record.</h2><p>We're collecting beta interest from graduate researchers, academic laboratories, and industrial R&amp;D teams. Tell us how your records get scattered, and help us understand the workflows that need support.</p><p className="beta-status">This is a beta interest form, not product access. LabLens currently has no file upload, AI search, instrument integrations, or experiment workspace.</p>
       <div className="beta-points"><div><CheckCircle2 size={17} /> Built for experimental research workflows</div><div><CheckCircle2 size={17} /> Researcher review stays central</div><div><CheckCircle2 size={17} /> Early input helps shape the product</div></div>
     </Reveal>
-    <Reveal><BetaForm /></Reveal>
+    <Reveal><p className="privacy-note">Beta interest only. Do not include confidential research data in this form.</p><BetaForm /></Reveal>
   </div></section>;
 }
 
@@ -289,5 +293,5 @@ function Footer() {
 }
 
 export default function Home() {
-  return <div className="site"><Header /><main><Hero /><Problem /><Workflow /><Capabilities /><Comparison /><Integrity /><AudienceAndFounders /><Beta /></main><Footer /></div>;
+  return <div className="site"><Header /><main><Hero /><Problem /><Workflow /><Capabilities /><Comparison /><Scenarios /><Integrity /><AudienceAndFounders /><Beta /></main><Footer /></div>;
 }

@@ -1,0 +1,1 @@
+- [LabLens AI positioning](lablens-positioning.md) — Position as a planned research-continuity layer that complements existing LIMS and ELNs, not a replacement.
