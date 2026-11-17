@@ -4,6 +4,13 @@ LabLens AI is a landing page and beta-interest site for a planned research-conti
 
 The website includes a deterministic, local-only record-to-evidence prototype to make the concept testable. It does not use an AI model.
 
+## Course revision resources
+
+- [Project Prototype Revision report](revision.md) — prioritized changes, anonymized feedback response, five executed evaluation cases, before/after comparison, and research-integrity risk.
+- [AI-use disclosure draft](ai-use-disclosure.md) — tools, representative prompts, assistance provided, verification, and student-review reminders.
+- [Demo recording storyboard](docs/demo-recording-storyboard.md) — timed 2–3 minute speaker notes and submission checklist.
+- [Current prototype](https://lab-lens-ai-landing-page.replit.app)
+
 ## Target users
 
 - Graduate researchers
@@ -71,6 +78,36 @@ The web app is in `artifacts/lablens-ai`. The signup service is in `artifacts/ap
 
 The downloadable fictional CSV is also linked from the demo. The product dashboard elsewhere on the page remains an illustrative concept, not a working workspace.
 
+## Demo video
+
+**Google Drive URL TO ADD after recording**
+
+This is a placeholder, not a video link. The student must record the video using [the timed storyboard](docs/demo-recording-storyboard.md), upload the same MP4 or MOV to Google Drive and Canvas, grant viewer access to `ehughes8@nd.edu` and `ghuang3@nd.edu`, include the public GitHub repository URL from the prior assignment in Canvas, and confirm the Drive link works while signed out. Do not replace this placeholder until those steps are complete.
+
+## Public GitHub repository sync
+
+The configured `origin` observed in this workspace is `https://github.replit.internal/msohail2-nd/LabLens-AI`, not a public `github.com` URL. The prior assignment’s public repository URL is not available in this project, so it is intentionally not guessed or linked here. The current prototype link above is the public Replit site, not a GitHub repository.
+
+To sync this work to the **same public GitHub repository used for the prior assignment** while retaining history:
+
+1. Find and verify that existing repository URL from the prior assignment.
+2. Add it as a separate remote; do not replace the internal `origin`:
+
+   ```sh
+   git remote add course-public <EXISTING_PUBLIC_GITHUB_REPOSITORY_URL>
+   git fetch course-public
+   git log --oneline --graph --decorate --all -20
+   ```
+
+3. Check that the target branch is an ancestor of the local `main`, then push only if the check succeeds:
+
+   ```sh
+   git merge-base --is-ancestor course-public/main main
+   git push course-public main:main
+   ```
+
+   If the ancestry check fails or the push is rejected, stop and reconcile the histories with the repository owner before pushing. Do not force-push or create a different public repository just to bypass the mismatch. After the push, verify the public repository URL and commit through GitHub in a signed-out browser.
+
 ## What works, sample behavior, and future plans
 
 | Capability | Status | Details |
@@ -112,7 +149,7 @@ The beta form is separate from the local demo. It collects name, email address, 
 
 ## Tests and verification
 
-The web test suite covers local evidence excerpts and conflict flags, no-match behavior, TXT/CSV parsing, quoted CSV handling, malformed/empty/unsupported input, text sanitization, the existing signup schema without database writes, the interactive sample flow, researcher review acknowledgement, and key landing-page links.
+The web test suite covers local evidence excerpts and conflict flags, no-match behavior, TXT/CSV parsing, quoted CSV handling, malformed/empty/unsupported input, text sanitization, the existing signup schema without database writes, the interactive sample flow, researcher review acknowledgement, key landing-page links, and the five separately named course evaluation cases in `revision.md`.
 
 Commands:
 
@@ -125,10 +162,12 @@ pnpm --filter @workspace/api-server run typecheck
 
 Verification for this revision:
 
-- `pnpm --filter @workspace/lablens-ai run test` — passed, 2 test files and 8 tests.
+- `pnpm --filter @workspace/lablens-ai run test` — passed, 3 test files and 13 tests.
 - `pnpm --filter @workspace/lablens-ai run typecheck` — passed.
 - `PORT=19992 BASE_PATH=/ pnpm --filter @workspace/lablens-ai run build` — passed. Vite reported sourcemap-location warnings for the existing tooltip and label UI modules, but completed the build.
 - `pnpm --filter @workspace/api-server run typecheck` — passed.
 - API smoke check — `/api/healthz` returned HTTP 200; an intentionally invalid signup body returned HTTP 400. No valid signup was submitted and no signup row was created for testing.
 
 No valid signup is used in the automated test suite, so those tests do not add rows to the signup database.
+
+The course report distinguishes automated component tests from manual browser tests. No manual real-browser file upload or signed-out Google Drive/GitHub access check is claimed as complete.

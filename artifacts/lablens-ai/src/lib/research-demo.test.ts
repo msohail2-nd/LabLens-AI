@@ -21,7 +21,12 @@ describe("local research evidence prototype", () => {
     expect(overview.sourceSupportedFacts.join("\n")).toContain("1:1");
     expect(overview.sourceSupportedFacts.join("\n")).toContain("Temperature: 25 °C");
     expect(overview.sourceSupportedFacts.join("\n")).toContain("Temperature: 60 °C");
-    expect(overview.unresolvedQuestions[0]).toContain("will not choose one");
+    expect(overview.unresolvedQuestions[0]).toContain(
+      "will not choose or infer an answer",
+    );
+    expect(overview.unresolvedQuestions[0]).toContain(
+      "reason for the change is not recorded",
+    );
   });
 
   it("returns a clear no-match question for empty or unknown searches", () => {

@@ -259,7 +259,7 @@ export function DemoHowToTest() {
           <h2 className="display">Follow the evidence yourself.</h2>
         </div>
         <ol>
-          <li><span>01</span> Load the fictional NiO-17 notes.</li>
+          <li><span>01</span> Load the fictional NiO-17 notes and dated revision CSV.</li>
           <li><span>02</span> Search NiO-17 and inspect the dated source excerpts.</li>
           <li><span>03</span> Confirm the 3:1 vs 1:1 conflict is flagged, not decided.</li>
           <li><span>04</span> Mark it reviewed; the unresolved question remains open.</li>

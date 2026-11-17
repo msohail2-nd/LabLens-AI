@@ -205,6 +205,24 @@ function solventRatios(source: LocalResearchSource): string[] {
   return [...values];
 }
 
+function hasUnrecordedReason(source: LocalResearchSource): boolean {
+  if (/reason.{0,60}(not recorded|unknown|missing|unexplained)/i.test(source.text)) {
+    return true;
+  }
+  if (!source.rows?.length) return false;
+
+  const headers = source.rows[0].map((header) => header.toLowerCase());
+  const fieldColumn = headers.findIndex((header) => ["field", "condition"].includes(header));
+  const reasonColumn = headers.indexOf("reason");
+  return (
+    reasonColumn >= 0 &&
+    source.rows.slice(1).some((row) => {
+      const field = row[fieldColumn]?.toLowerCase().replace(/[_\s]/g, "");
+      return field === "solventratio" && !row[reasonColumn]?.trim();
+    })
+  );
+}
+
 export function buildEvidenceOverview(
   sources: LocalResearchSource[],
   query: string,
@@ -238,7 +256,11 @@ export function buildEvidenceOverview(
   const unresolvedQuestions =
     ratios.length > 1
       ? [
-          `Sources record solvent ratios ${ratios.join(" and ")}. Which condition is authoritative? This prototype will not choose one.`,
+          `Sources record solvent ratios ${ratios.join(" and ")}. ${
+            matches.some(hasUnrecordedReason)
+              ? "The reason for the change is not recorded in the matching sources. "
+              : ""
+          }Which condition is authoritative? This prototype will not choose or infer an answer.`,
         ]
       : matches.length === 0
         ? ["No matching source was found. Try a record ID or a term from the notes."]
