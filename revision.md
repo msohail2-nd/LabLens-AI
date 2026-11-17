@@ -89,5 +89,8 @@ The sample workflow responds to the first risk by showing the actual conflicting
 - [AI-use disclosure draft](ai-use-disclosure.md)
 - [Demo recording storyboard](docs/demo-recording-storyboard.md)
 - [Current prototype](https://lab-lens-ai-landing-page.replit.app)
+- [Existing public GitHub repository](https://github.com/msohail2-nd/LabLens-AI)
 - **Demo video:** Not recorded. Do not treat a placeholder as a video link.
-- **Public GitHub repository:** Not identified in the current workspace. The configured Git remote is internal; see the README’s “GitHub repository sync” instructions. No public repository URL is invented here.
+- **Local merge status:** Public GitHub `main` was fetched at `296fe1940a0036061ebe20b086b41936a6b15ad4` on November 17, 2026. Its documentation was reconciled with the newer Replit implementation locally; the merge has not been pushed.
+
+The five evaluations below are automated component-level tests, not manual trials against the published site. The separate [demo storyboard](docs/demo-recording-storyboard.md) retains the course's 2–3 minute recording sequence and Canvas/Drive checklist.

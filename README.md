@@ -10,6 +10,10 @@ The website includes a deterministic, local-only record-to-evidence prototype to
 - [AI-use disclosure draft](ai-use-disclosure.md) — tools, representative prompts, assistance provided, verification, and student-review reminders.
 - [Demo recording storyboard](docs/demo-recording-storyboard.md) — timed 2–3 minute speaker notes and submission checklist.
 - [Current prototype](https://lab-lens-ai-landing-page.replit.app)
+- [Public GitHub repository](https://github.com/msohail2-nd/LabLens-AI)
+- [Replit development project](https://replit.com/@msohailnd/LabLens-AI-landing-page)
+
+**Course milestone:** Project Prototype Revision, due November 19, 2026.
 
 ## Target users
 
@@ -86,27 +90,27 @@ This is a placeholder, not a video link. The student must record the video using
 
 ## Public GitHub repository sync
 
-The configured `origin` observed in this workspace is `https://github.replit.internal/msohail2-nd/LabLens-AI`, not a public `github.com` URL. The prior assignment’s public repository URL is not available in this project, so it is intentionally not guessed or linked here. The current prototype link above is the public Replit site, not a GitHub repository.
+The configured `origin` is Replit’s internal GitHub proxy for the existing public repository linked above. On November 17, 2026, `origin/main` was fetched at `296fe1940a0036061ebe20b086b41936a6b15ad4`. This local checkout has reconciled that history with the newer Replit work, but **has not been pushed**. The public repository may therefore still lack the current demo implementation and tests until a later reviewed push.
 
-To sync this work to the **same public GitHub repository used for the prior assignment** while retaining history:
+To publish the local merge safely after review:
 
-1. Find and verify that existing repository URL from the prior assignment.
-2. Add it as a separate remote; do not replace the internal `origin`:
+1. Confirm the branch contains the intended merge and that tests pass.
+2. Fetch and inspect the public target before pushing:
 
    ```sh
-   git remote add course-public <EXISTING_PUBLIC_GITHUB_REPOSITORY_URL>
-   git fetch course-public
+   git fetch origin main
    git log --oneline --graph --decorate --all -20
+   git status --short --branch
    ```
 
-3. Check that the target branch is an ancestor of the local `main`, then push only if the check succeeds:
+3. Push only if `origin/main` is an ancestor of local `main`; if not, stop and merge/reconcile first:
 
    ```sh
-   git merge-base --is-ancestor course-public/main main
-   git push course-public main:main
+   git merge-base --is-ancestor origin/main main
+   git push origin main:main
    ```
 
-   If the ancestry check fails or the push is rejected, stop and reconcile the histories with the repository owner before pushing. Do not force-push or create a different public repository just to bypass the mismatch. After the push, verify the public repository URL and commit through GitHub in a signed-out browser.
+   Never force-push or replace either history. After a push, verify the public repository URL and commit through GitHub while signed out.
 
 ## What works, sample behavior, and future plans
 
@@ -170,4 +174,4 @@ Verification for this revision:
 
 No valid signup is used in the automated test suite, so those tests do not add rows to the signup database.
 
-The course report distinguishes automated component tests from manual browser tests. No manual real-browser file upload or signed-out Google Drive/GitHub access check is claimed as complete.
+The course report distinguishes automated component tests from manual browser tests. No manual real-browser file upload or signed-out Google Drive/GitHub access check is claimed as complete. Before course submission, review the actual GitHub snapshot, record the video, verify signed-out access, and submit both the public repository URL and video file to Canvas.
