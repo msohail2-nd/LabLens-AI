@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useCreateBetaSignup } from '@workspace/api-client-react';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { CapabilityStatus, DemoHowToTest, ResearchDemo } from '@/components/research-demo';
 import { ArrowDown, ArrowRight, Camera, Check, CheckCircle2, ChevronRight, ClipboardList, FileText, FolderOpen, GitBranch, Layers3, Link2, Menu, Monitor, NotebookPen, Search, ShieldCheck, Sparkles, X } from 'lucide-react';
 
 const signupSchema = z.object({
@@ -123,6 +124,7 @@ function Hero() {
         <div className="hero-actions">
           <a href="#beta" className="btn-primary" data-testid="link-hero-beta">Join the beta <ArrowRight size={16} aria-hidden="true" /></a>
           <a href="#preview" className="btn-secondary" data-testid="link-hero-preview">Explore the product <ArrowDown size={15} aria-hidden="true" /></a>
+          <a href="#research-demo" className="btn-secondary" data-testid="link-hero-demo">Try the research demo <ArrowRight size={15} aria-hidden="true" /></a>
         </div>
         <div className="hero-fine">For graduate researchers, academic laboratories &amp; industrial R&amp;D</div>
         <p className="availability-note">Landing page and beta signup only. No file upload, AI search, instrument integrations, or experiment workspace is available yet. Product view below is illustrative.</p>
@@ -293,5 +295,5 @@ function Footer() {
 }
 
 export default function Home() {
-  return <div className="site"><Header /><main><Hero /><Problem /><Workflow /><Capabilities /><Comparison /><Scenarios /><Integrity /><AudienceAndFounders /><Beta /></main><Footer /></div>;
+  return <div className="site"><Header /><main><Hero /><ResearchDemo /><DemoHowToTest /><CapabilityStatus /><Problem /><Workflow /><Capabilities /><Comparison /><Scenarios /><Integrity /><AudienceAndFounders /><Beta /></main><Footer /></div>;
 }
