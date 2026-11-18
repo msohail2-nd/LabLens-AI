@@ -42,11 +42,15 @@ Executed command: `pnpm --filter @workspace/lablens-ai run test`.
 
 ### Same task: before and after
 
-**Task used for comparison:** “reconstruct why experimental conditions changed or B7-B8 exclusions.”
+**Task used for comparison:** “Locate the supporting records for an experiment whose conditions changed, and identify whether the reason for the change is documented.” This keeps the **user task** constant between versions. The before-view illustration used B7–B8; the revised executable demonstration uses fictional NiO-17, so this is **not** an identical-input experiment or a controlled comparison.
 
 **Before:** Peer feedback and the prior project view described a static illustrative dashboard. Its concept text mentioned the B7–B8 exclusion and asked for researcher confirmation, but it did not execute a record search or reconstruct the evidence. This is a project-history / peer-feedback observation, not a controlled benchmark.
 
 **After:** In the executed NiO-17 demo case, the local search displays a dated baseline note with a 3:1 ratio and 25 °C, a follow-up note with a 1:1 ratio and 60 °C, and a revision CSV showing the ratio change with a blank reason. It does **not** answer why the condition changed; it exposes the absent rationale and asks the researcher to review the conflicting evidence. The automated results above verify those UI assertions. The demo does not contain a B7–B8 sample record.
+
+### Additional browser walkthrough evidence (November 17, 2026)
+
+The project owner opened the published LabLens AI website and shared screenshots showing the NiO-17 local evidence overview, three source records with dated notebook excerpts, and the 3:1 / 1:1 solvent-ratio discrepancy. A second screenshot showed the **Needs review** message and **“Review acknowledged — question remains open”** after the review control was used. These observations supplement the automated **Typical 1**, **Challenge**, and **Risk** cases for the bundled sample only. They are **not** an independent anonymous-student test, a real-browser TXT/CSV upload, a scientific validation, or a complete network/privacy audit.
 
 ### Measured interpretation
 
@@ -90,7 +94,7 @@ The sample workflow responds to the first risk by showing the actual conflicting
 - [Demo recording storyboard](docs/demo-recording-storyboard.md)
 - [Current prototype](https://lab-lens-ai-landing-page.replit.app)
 - [Existing public GitHub repository](https://github.com/msohail2-nd/LabLens-AI)
-- **Demo video:** Not recorded. Do not treat a placeholder as a video link.
-- **Local merge status:** Public GitHub `main` was fetched at `296fe1940a0036061ebe20b086b41936a6b15ad4` on November 17, 2026. Its documentation was reconciled with the newer Replit implementation locally; the merge has not been pushed.
+- **Demo video:** [Narrated LabLens AI recording on Google Drive](https://drive.google.com/file/d/1dLYZAlL1SUArmibqInzlryDiN2-Ro1ja/view?usp=drive_link), recorded November 17, 2026 (approximately 2 minutes 49 seconds). The owner reports sharing it with both course instructors; their actual ability to play it has not been independently verified here. The video file itself must also be uploaded to Canvas.
+- **GitHub synchronization:** Public GitHub `main` was verified after the merge at `e641774df9ada947251af529d3543ce1c1579f77`, with the interactive demo, sample CSV, five-case tests and course documentation present. Subsequent documentation-only commits added the video link and corrected status notes.
 
-The five evaluations below are automated component-level tests, not manual trials against the published site. The separate [demo storyboard](docs/demo-recording-storyboard.md) retains the course's 2–3 minute recording sequence and Canvas/Drive checklist.
+The five evaluations above are automated component-level tests, supplemented by the limited published-site browser walkthrough described above; they are not five independent participant studies. The separate [demo storyboard](docs/demo-recording-storyboard.md) retains the course's 2–3 minute recording sequence and Canvas/Drive checklist.
