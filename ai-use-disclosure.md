@@ -6,7 +6,7 @@ This disclosure describes the AI assistance visible in this Replit project histo
 
 - **Replit Agent:** Used in this Replit workspace to inspect and revise the LabLens page, add deterministic browser-side demo code and automated tests, and draft project documentation.
 - **Underlying model name:** Not available in the project history, so no model name is claimed.
-- **ChatGPT and GitHub connector:** The GitHub submission draft reports use of ChatGPT to prepare submission documentation and of a GitHub connector to inspect the public repository. The Replit project history alone does not independently establish those external actions. Confirm these entries against your own activity and correct them before submission.
+- **ChatGPT and GitHub connector:** ChatGPT helped plan the LIMS comparison and prototype revisions, interpret peer and rubric feedback, draft the narrated demo script and course documentation, inspect the public repository, and update files through the connected GitHub tool. These actions are documented in the project conversation. The student should still review and correct this disclosure before submission.
 
 ## Representative instructions
 
@@ -26,14 +26,14 @@ The demo behavior is rule-based TypeScript, not AI output. No model-generated re
 
 ## Human direction and decisions
 
-The project instructions specified that LabLens should complement LIMS/ELNs, not claim to replace them; that the demo must not guess which conflicting solvent ratio is correct; and that optional files should be handled locally rather than uploaded. Those constraints were implemented. This document does not claim that a student independently reviewed every code change or personally performed the automated tests.
+The project instructions specified that LabLens should complement LIMS/ELNs, not claim to replace them; that the demo must not guess which conflicting solvent ratio is correct; and that optional files should be handled locally rather than uploaded. Those constraints were implemented. In response to a peer suggestion to upload arbitrary data, the implemented scope was deliberately adapted to limited browser-local TXT/CSV handling rather than sending confidential research records to a new server. This document does not claim that the student independently reviewed every code change or personally performed the automated tests.
 
 The no-guessing and local-only choices are prompt-specified design decisions for the student to review before submission; they are not evidence of a separate post-implementation approval.
 
-The report’s “after” observations are tied to the automated tests listed in `revision.md`. A human should still review the code, documentation, product claims, and course submission before submitting.
+The report’s “after” observations are primarily tied to the automated tests in `revision.md`. The project owner also personally opened the published demo, inspected NiO-17 evidence and the unresolved review question, and shared screenshots from that browser walkthrough on November 17. The owner recorded a narrated demonstration and reports sharing it with the instructors. This user testing is narrower than a full code review or security audit.
 
 ## Verification and outstanding work
 
 The executed checks and their outcomes are recorded in `revision.md` and `README.md`. The test harness verifies five representative cases, including a local file-input component path; it is not a manual test in a real browser and does not establish scientific correctness or comprehensive privacy protection.
 
-Outstanding: the student should confirm the reported ChatGPT/GitHub connector use and add any firsthand human decision or revision that is accurate; record/share the demo video; verify signed-out access; and review the local merge before any GitHub push.
+Outstanding: the student should review this disclosure in their own words, verify that the invited instructors can play the linked Google Drive recording, confirm the published site and GitHub links, and submit the actual video file plus repository URL to Canvas. The GitHub source merge is already published. No complete real-browser upload/network audit or live AI-model evaluation has been performed.
