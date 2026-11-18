@@ -88,7 +88,7 @@ The downloadable fictional CSV is also linked from the demo. The product dashboa
 
 Recorded November 17, 2026 (approximately 2 minutes 49 seconds). The video demonstrates the fictional NiO-17 record-to-evidence workflow, conflicting solvent ratios, review acknowledgement, and limitations. [Timed recording storyboard](docs/demo-recording-storyboard.md).
 
-**Access and submission checks still required:** Confirm that `ehughes8@nd.edu` and `ghuang3@nd.edu` have **Viewer** access, test playback in a signed-out/private browser window where permitted, and upload the video file directly to Canvas **along with the public GitHub repository link**. The link appearing here does not itself verify Google Drive permissions or Canvas submission.
+**Sharing and submission:** The project owner reports sharing the video with `ehughes8@nd.edu` and `ghuang3@nd.edu`. Their actual Viewer permissions and playback have not been independently checked here. The video file must also be uploaded **directly to Canvas** alongside the public GitHub repository URL; linking Google Drive in this README alone is not a Canvas submission.
 
 ## Public GitHub repository sync
 
@@ -156,4 +156,4 @@ Verification for this revision:
 
 No valid signup is used in the automated test suite, so those tests do not add rows to the signup database.
 
-The course report distinguishes automated component tests from manual browser tests. No manual real-browser file upload or signed-out Google Drive/GitHub access check is claimed as complete. Before course submission, review the actual GitHub snapshot, record the video, verify signed-out access, and submit both the public repository URL and video file to Canvas.
+The course report distinguishes automated component tests from manual browser tests. On November 17, the project owner also demonstrated the published NiO-17 evidence view and acknowledged the unresolved question in browser screenshots; this does not establish real-browser TXT/CSV upload behavior or a full privacy audit. The narrated video has been recorded and linked above. Before course submission, verify that the instructors can open and play the video, check public GitHub and prototype accessibility, and submit the repository URL plus the actual video file to Canvas.
