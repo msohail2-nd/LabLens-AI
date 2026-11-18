@@ -84,33 +84,15 @@ The downloadable fictional CSV is also linked from the demo. The product dashboa
 
 ## Demo video
 
-**Google Drive URL TO ADD after recording**
+**[Watch the narrated LabLens AI prototype demo (Google Drive)](https://drive.google.com/file/d/1dLYZAlL1SUArmibqInzlryDiN2-Ro1ja/view?usp=drive_link)**
 
-This is a placeholder, not a video link. The student must record the video using [the timed storyboard](docs/demo-recording-storyboard.md), upload the same MP4 or MOV to Google Drive and Canvas, grant viewer access to `ehughes8@nd.edu` and `ghuang3@nd.edu`, include the public GitHub repository URL from the prior assignment in Canvas, and confirm the Drive link works while signed out. Do not replace this placeholder until those steps are complete.
+Recorded November 17, 2026 (approximately 2 minutes 49 seconds). The video demonstrates the fictional NiO-17 record-to-evidence workflow, conflicting solvent ratios, review acknowledgement, and limitations. [Timed recording storyboard](docs/demo-recording-storyboard.md).
+
+**Access and submission checks still required:** Confirm that `ehughes8@nd.edu` and `ghuang3@nd.edu` have **Viewer** access, test playback in a signed-out/private browser window where permitted, and upload the video file directly to Canvas **along with the public GitHub repository link**. The link appearing here does not itself verify Google Drive permissions or Canvas submission.
 
 ## Public GitHub repository sync
 
-The configured `origin` is Replit’s internal GitHub proxy for the existing public repository linked above. On November 17, 2026, `origin/main` was fetched at `296fe1940a0036061ebe20b086b41936a6b15ad4`. This local checkout has reconciled that history with the newer Replit work, but **has not been pushed**. The public repository may therefore still lack the current demo implementation and tests until a later reviewed push.
-
-To publish the local merge safely after review:
-
-1. Confirm the branch contains the intended merge and that tests pass.
-2. Fetch and inspect the public target before pushing:
-
-   ```sh
-   git fetch origin main
-   git log --oneline --graph --decorate --all -20
-   git status --short --branch
-   ```
-
-3. Push only if `origin/main` is an ancestor of local `main`; if not, stop and merge/reconcile first:
-
-   ```sh
-   git merge-base --is-ancestor origin/main main
-   git push origin main:main
-   ```
-
-   Never force-push or replace either history. After a push, verify the public repository URL and commit through GitHub while signed out.
+On November 17, 2026, the original public repository's `main` branch was verified at merged prototype commit `e641774df9ada947251af529d3543ce1c1579f77`. The public tree includes the current research demo, fictional sample CSV, automated tests, README, revision report, AI-use disclosure, and recording storyboard. Later README-only updates (including this video link) are separate commits. Confirm GitHub and prototype access while signed out before Canvas submission.
 
 ## What works, sample behavior, and future plans
 
