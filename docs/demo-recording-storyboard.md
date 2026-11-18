@@ -1,7 +1,7 @@
 # LabLens AI Demo Recording Storyboard
 
 **Target length:** 2–3 minutes
-**Recording and submission:** The student must record and submit this video. No recording or video link is included yet.
+**Recording status:** A narrated 2-minute-49-second video was recorded on November 17, 2026 and linked from the [README](../README.md): [Google Drive recording](https://drive.google.com/file/d/1dLYZAlL1SUArmibqInzlryDiN2-Ro1ja/view?usp=drive_link). It has not been confirmed here as submitted to Canvas or independently verified for instructor playback.
 
 | Time | Screen/action | Speaker notes |
 | --- | --- | --- |
@@ -15,10 +15,10 @@
 
 ## Submission checklist
 
-- Record the screen and narration yourself; do not claim this storyboard is a recording.
-- Export one MP4 or MOV.
-- Upload the video to Google Drive and set link access so the course reviewers can open it.
-- Grant viewing access to `ehughes8@nd.edu` and `ghuang3@nd.edu`.
+- Narrated screen recording completed; use the [recording link](https://drive.google.com/file/d/1dLYZAlL1SUArmibqInzlryDiN2-Ro1ja/view?usp=drive_link), not the storyboard itself, as video evidence.
+- Recorded file format: MOV (actual file submitted separately to Canvas is still required).
+- The video was uploaded to Google Drive. Independently confirm both instructors can open and play it.
+- The project owner reports having shared the video with `ehughes8@nd.edu` and `ghuang3@nd.edu`; confirm both have Viewer access.
 - Add the same MP4/MOV file to Canvas alongside the public GitHub repository URL from the prior assignment.
-- Test the Drive link in a signed-out/private browser window. Confirm that the video plays without asking the reviewer to request access.
-- Replace the README’s placeholder only after the link and signed-out access have been verified.
+- Test the Drive link while signed into an account with Viewer access. If the video is intentionally restricted to the two named instructors, a signed-out browser may show a sign-in prompt; verify the instructors' Viewer grants rather than assuming the file must be public to everyone.
+- The README now links to the real recording. Check that GitHub and the published site open without an account, and that Google Drive sharing permits the instructors to view the recording.
